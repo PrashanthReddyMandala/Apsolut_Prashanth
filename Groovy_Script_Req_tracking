@@ -1,0 +1,17 @@
+import com.sap.gateway.ip.core.customdev.util.Message;
+
+import java.util.HashMap;
+
+def Message processData(Message message)
+
+{
+
+def removal = message.getBody(java.lang.String) as String;
+
+//removal = removal.replace("RequirementTracking","");
+removal = removal.get(RequirementTracking);
+message.setBody(removal);
+
+return message;
+
+}
